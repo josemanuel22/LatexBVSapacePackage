@@ -29,8 +29,7 @@
 	\par\nopagebreak\noindent
 }
 
-
-
+%Default Set used in case one is not specified
 \newcommand{\DefaultSetWP}{\StrMid{\@DefaultSet}{2}{2}}
 
 \newcommand\Radot{%
@@ -46,7 +45,7 @@
     {\draw (0,1.2) |- (1,0) (0.55,0)}%
 }
 
-
+%Sets of real, integer, rational and natural
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -54,20 +53,26 @@
 
 \newcommand{\E}{\mathcal{E}}
 
+%%Lp and Hp spaces
 \newcommand{\Lm}[1]{\mathcal{L}^{#1}}
 \newcommand{\Hm}[1]{\mathcal{H}^{#1}}
+
+%%Set diference
 \newcommand{\setminuss}[2]{#1 \triangle #2}
 
+%%Part of Cantor, of jump, of continuous derivative
 \newcommand{\Da}[1]{D^{a}#1}
 \newcommand{\Dj}[1]{D^{j}#1}
 \newcommand{\Dc}[1]{D^{c}#1}
 
+%%Weak and weak star convergence
 \newcommand{\wconv}[2]{#1\rightharpoonup#2}
 \newcommand{\wstarconv}[2]{#1 \stackrel{*}{\rightharpoonup}#2}
 
+%%Injection
 \newcommand{\inyec}[2]{#1\hookrightarrow #2}
 
-
+%%Declare Delimiters [,],{,}.|
 \DeclarePairedDelimiter\br{[}{]}
 %\DeclarePairedDelimiterX\set[1]\lbrace\rbrace{\def\given{\;\delimsize\vert\;}#1} %\set{x \given x}
 \DeclarePairedDelimiterX\set[1]\lbrace\rbrace{\def\given{\;\colon\;}#1}
@@ -75,12 +80,14 @@
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
 
-
-
 \let\div\undefined
+
+%%Declare supremum,Lip and div operator
 \DeclareMathOperator{\div}{div}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\lip}{Lip}
+
+%%Utilities of Functions of bounded variation in one dimension
 \newcommand{\PV}[1]{pV(#1,\DefaultSetWP)}
 \newcommand{\EV}[1]{eV(#1,\DefaultSetWP)}
 \newcommand{\dist}[2]{dist(#1,#2)}
@@ -88,12 +95,12 @@
 \newcommand{\V}[1]{V(#1,\DefaultSetWP)}
 \newcommand{\Tan}[3]{\ifthenelse{\equal{#1}{1}}{\ensuremath{Tan(#2,#3)}}{\ensuremath{Tan^{#1}(#2,#3)}}}
 
-\newcommand{\udens}[3]{\Theta_{#1}^{*}(#2,#3)}%upper spherical density
+%%Upper, lower spherical density
+\newcommand{\udens}[3]{\Theta_{#1}^{*}(#2,#3)}
 \newcommand{\ldens}[3]{\Theta_{#1 *}(#2,#3)}
 \newcommand{\dens}[3]{\Theta_{#1}(#2,#3)}
 
-
-%% Radon measure spaces
+%%Radon measure spaces
 \newcommand{\M}[1][1]{
 	\ifthenelse{\equal{#1}{1}}{\mathcal{M}\@DefaultSet}{\br{\mathcal{M}\@DefaultSet}^{#1}}}
 
@@ -108,7 +115,7 @@
 }
 
 
-%% Add BV functions
+%%BV spaces
 \AtBeginDocument{%
 \let\BVbar=\BV
 \newcommand{\BV}[1][1]{
@@ -119,7 +126,7 @@
 	\ifthenelse{\equal{#1}{1}}{\ensuremath{BV_{loc}\@DefaultSet}}{\ensuremath{\br{BV_{loc}\@DefaultSet}^{#1}}}
 }
 
-%% Add SBV functions
+%%SBV spaces
 \AtBeginDocument{%
 \let\SBVbar=\SBV
 \newcommand{\SBV}[1][1]{
@@ -130,7 +137,7 @@
 	\ifthenelse{\equal{#1}{1}}{\ensuremath{SBV_{loc}\@DefaultSet}}{\ensuremath{\br{SBV_{loc}\@DefaultSet}^{#1}}}
 }
 
-%% Add compacted suported C functions
+%%Compacted suported C functions
 \AtBeginDocument{%
 \let\Lipbar=\Cc
 \newcommand{\Cc}[2][1]{
@@ -142,7 +149,7 @@
 }
 
 
-%% Add Lip functions
+%%Lip Spaces
 \AtBeginDocument{%
 \let\Lipbar=\Lip
 \newcommand{\Lip}[1][1]{
