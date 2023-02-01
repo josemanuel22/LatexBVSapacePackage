@@ -1,6 +1,6 @@
 \def\FileName{tfm-miscelaneos}
-\def\fileversion{0.9}
-\def\filedescr{Commands to print miscellaneous stuff of my master thesis}
+\def\fileversion{1.0}
+\def\filedescr{Latex package to add functionalities of functional spaces.}
 %%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{\FileName}[\filedate\space v\fileversion\space\filedescr]
@@ -10,24 +10,6 @@
 \usepackage{stackengine}
 \usepackage{xstring}
 \usepackage{tikz}
-
-\newenvironment{keywords}[1]{
-	\addvspace{\baselineskip}\par
-	{\ifthenelse{\equal{#1}{english}}{\sffamily\bfseries\Large Keywords}{\sffamily\bfseries\Large Palabras clave}\smallskip\par}}{%
-	\par\nopagebreak\noindent
-}
-
-\newenvironment{classification}[1]{
-	\addvspace{\baselineskip}\par
-	{\ifthenelse{\equal{#1}{english}}{\sffamily\bfseries\Large AMS subject classification}{\sffamily\bfseries\Large Clasificación por temas de la AMS}\smallskip\par}}{%
-	\par\nopagebreak\noindent
-}
-
-\newenvironment{agradecimientos}[1]{
-	\addvspace{\baselineskip}\par
-	{\ifthenelse{\equal{#1}{english}}{\sffamily\bfseries\Large Acknowledgment}{\sffamily\bfseries\Large Agradecimientos}\smallskip\par}}{%
-	\par\nopagebreak\noindent
-}
 
 %Default Set used in case one is not specified
 \newcommand{\DefaultSetWP}{\StrMid{\@DefaultSet}{2}{2}}
@@ -40,6 +22,7 @@
   }%
 }
 
+%Measure restriction to a set
 \newcommand\radot{%
     \tikz[line cap=round,x=1ex,y=1ex,line width=0.1pt]
     {\draw (0,1.2) |- (1,0) (0.55,0)}%
